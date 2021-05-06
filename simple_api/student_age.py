@@ -33,15 +33,21 @@ except NameError:
 
 student_age_file = open(student_age_file_path, "r")
 student_age = json.load(student_age_file)
+print(student_age)
+student_age_file.close()
 
-@app.route('/pozos/api/v1.0/get_student_ages', methods=['GET'])
+#@app.route('/pozos/api/v1.0/get_student_ages', methods=['GET'])
+@app.route('/get_student_ages', methods=['GET'])
 @auth.login_required
 def get_student_ages():
+    print("get_student_ages")
     return jsonify({'student_ages': student_age })
 
-@app.route('/pozos/api/v1.0/get_student_ages/<student_name>', methods=['GET'])
+#@app.route('/pozos/api/v1.0/get_student_ages/<student_name>', methods=['GET'])
+@app.route('/get_student_ages/<student_name>', methods=['GET'])
 @auth.login_required
 def get_student_age(student_name):
+    print(student_name)
     if student_name not in student_age :
         abort(404)
     if student_name in student_age :
