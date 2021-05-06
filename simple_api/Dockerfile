@@ -12,4 +12,4 @@ RUN pip install flask flask_httpauth flask_simpleldap python-dotenv
 #RUN python3 /data/student_age.py > out_server.log
 #RUN cat out_server.log
 EXPOSE 5000:5000
-CMD [ "python3", "/data/student_age.py" ]
+CMD [ "python", "/data/student_age.py" ]
