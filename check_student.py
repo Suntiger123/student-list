@@ -14,10 +14,10 @@ def check_name():
     cmpjson=sorted(student_age_ref.items()) == sorted(student_age_test.items())
     if(cmpjson==1):
         print("comparison of json file gives=> They are equal! ")
-        exit(0)
+        return(0)
     else:
         print("comparison of json file gives=> They are not equal !!")
-        exit(1)
+        return(1)
 
 if __name__ == '__main__':
     check_name()
